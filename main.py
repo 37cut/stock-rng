@@ -49,10 +49,9 @@ def receive(info: dict):
         except Exception as e: interrupt(e)
 
         source = json.loads(access.text)['data']
-        Index_append(source['code'])
 
-        source = numpy.array([ s.split(',') for s in source['klines'] ]).reshape(-1, 7)
-        Data_append(source)
+        Index_append(source['code'])
+        Data_append(numpy.array([ s.split(',') for s in source['klines'] ]).reshape(-1, 7))
 
 def swap(idx: int):
     with Semaphore:

@@ -15,7 +15,7 @@ def generate_code(size: int) -> set:
                    '300', '301', '000',
                    '001', '002', '003']
 
-    for s in range(size):
+    while len(cset) != 100:
         seed = str(random.randint(100, 65535) * random.randint(100, 65535))
         x = random.randint(0, len(seed) - 4)
         y = x + 3
@@ -136,8 +136,8 @@ class Stock:
         print(f'> Code: {self.code}')
 
     def show(self):
-        font_regl = mf.FontProperties(fname = path + '/fonts/font.otf', size = 18)
-        font_mono = mf.FontProperties(fname = path + '/fonts/mono.ttf', size = 16)
+        font_regl = mf.FontProperties(fname = path + '/fonts/font.otf', size = 16)
+        font_mono = mf.FontProperties(fname = path + '/fonts/mono.ttf', size = 14)
 
         kline_label = ['Start Price', 'End Price', 'Max Price', 'Min Price']
         title_color = '#009900' if self.end[0] > self.end[-1] else '#990000'
