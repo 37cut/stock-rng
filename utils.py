@@ -15,7 +15,7 @@ def generate_code(size: int) -> set:
                    '300', '301', '000',
                    '001', '002', '003']
 
-    while len(cset) != 100:
+    while len(cset) != size:
         seed = str(random.randint(100, 65535) * random.randint(100, 65535))
         x = random.randint(0, len(seed) - 4)
         y = x + 3
@@ -147,7 +147,7 @@ class Stock:
         # layout
         self.fig, self.ax = mp.subplots(nrows = 3, ncols = 1,
                                         constrained_layout = True,
-                                        gridspec_kw = dict(height_ratios = [3,1,1]))
+                                        gridspec_kw = dict(height_ratios = [6,1,1]))
 
         self.canva = Canva(self.period, self.hScale, self.ax)
 
